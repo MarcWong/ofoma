@@ -1,0 +1,262 @@
+.slider {
+	cursor:default!important;	
+}
+
+/*
+.iosSlider {
+	
+	overflow: hidden;
+	width: 690px;
+	height: 490px;
+	margin:auto 0 0px;
+	float:left;
+}
+
+.iosSlider .slider {
+	width: 100%;
+	height: 100%;
+}
+
+.iosSlider .slider .slide {
+	width: 100%;
+	height: 100%;
+	padding: 0 0 0 0;
+	position: relative;
+}
+
+.tintButton {			
+	color:#fff!important;
+	cursor:pointer;
+	padding:5px 12px;
+	font-size:12px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+*/
+/* 
+	Bullets and thumbnails navigation	
+*/
+.about-slider {
+	height:157px;
+	
+}
+
+.iosSlider .sliderNavi {
+    position: absolute;
+    right:15px;
+    bottom:15px;
+}
+.iosSlider .sliderNavi .naviItem {	
+	
+	float: left;
+	 background: none repeat scroll 0 0 #EAE5E4;
+	cursor: pointer;
+	display: block;
+	font-size: 0;
+	height: 15px;
+	text-indent: -9999px;
+	width: 50px;
+	border:3px solid #fff;
+}
+/* Current bullet */
+.iosSlider .sliderNavi .naviItem.selected {	
+	background:#F15A3B;
+}
+/* Bullet hover state */
+.iosSlider .sliderNavi .naviItem:hover {		
+	background:#F15A3B;
+}
+
+.iosSlider .prev,
+.iosSlider .next
+{	
+    display: block;
+    position: absolute;
+    z-index: 25;
+	width: 45px;
+	height: 45px;
+	top:165px;
+	
+}
+
+.iosSlider .next {
+    width: 56px;
+    height: 70px;
+    cursor: pointer;
+    background: transparent url(../images/slide_next.png) no-repeat 0 0;
+}
+
+.iosSlider .next:hover,
+.iosSlider .next:focus {
+    background-position: -56px 0;
+}
+
+.iosSlider .next:active {
+    background-position: -112px 0;
+    
+}
+
+.iosSlider .prev {
+    width: 56px;
+    height: 70px;
+    cursor: pointer;
+    background: transparent url(../images/slide_prev.png) no-repeat 0 0;
+}
+
+
+.iosSlider .prev:hover, 
+.iosSlider .prev:focus {
+    background-position: -56px 0;
+}
+
+.iosSlider .prev:active {
+    background-position: -112px 0;
+}
+
+/* left arrow */
+.iosSlider .prev {
+	left: 15px;	
+}
+/* right arrow */
+.iosSlider .next {
+	right: 15px;
+}
+
+/* Carousel */
+.carousel {
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	
+	margin:auto 0 0px;
+}
+
+.carousel .slider {
+	width: 100%;
+}
+
+
+.prev,
+.next
+{	
+    display: block;
+    position: absolute;
+    z-index: 25;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    top:-75px;
+    text-indent:-9999px;
+}
+
+.next {
+    background: #EAECEE url(../images/arrow-right-medium.png) no-repeat center center;
+
+}
+.prev {
+
+    background: #EAECEE url(../images/arrow-left-medium.png) no-repeat center center;
+  
+}
+.next:hover {
+    background-color: #C2A26F;
+}
+.prev:hover {
+    background-color: #C2A26F;
+}
+.prev:hover, 
+.prev:focus,
+.next:hover,
+.next:focus {
+   
+}
+
+
+/* left arrow */
+.prev {
+	right: 34px;	
+}
+/* right arrow */
+.next {
+	right: 0px;
+}
+
+/* Media */
+
+.more-views {
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+    height:130px;
+    margin:auto 0 15px;
+}
+
+.more-views .slider {
+    width: 412px;
+    margin:0 auto;
+}
+
+.more-views .slide {
+	width: 130px;
+}
+
+/* left arrow */
+.more-views-arrow.prev {
+	left: 15px;
+	top:575px;
+}
+/* right arrow */
+.more-views-arrow.next {
+	right: 15px;
+	top:575px;
+}
+
+
+/* Carousel Related */
+
+.related {
+	position: relative;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+    height:318px;
+    margin:auto 0 15px;
+}
+
+.related .slider {
+	width: 100%;
+}
+
+
+.related .prev,
+.related .next
+{	
+    display: block;
+    position: absolute;
+    z-index: 25;
+	width: 40px;
+	height: 40px;
+	top:85px;		
+}
+
+
+
+
+/* left arrow */
+.related .prev {
+	left: 0;	
+}
+/* right arrow */
+.related .next {
+	right: 0;
+}
+
+.new-arrow, .sale-arrow {
+	display:none;
+}

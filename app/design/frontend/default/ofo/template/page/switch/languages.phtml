@@ -1,0 +1,24 @@
+<?php if(count($this->getStores())>1): $_i_lang = 0; ?>
+<div class="form-language">
+<select id="form-language" name="form-language">
+<?php if(count($this->getStores())>1): $_i_lang = 0; ?>
+
+    <?php foreach ($this->getStores() as $_lang): $_i_lang++; ?>
+ 
+            <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId())?>
+            <?php if(!$_selected): ?>
+                
+                <option value="<?php echo $_lang->getCurrentUrl() ?>"><a href="<?php echo $_lang->getCurrentUrl() ?>"><?php echo $this->htmlEscape($_lang->getName()) ?></a></option>
+            <?php else: ?>
+                <option selected><?php echo $this->htmlEscape($_lang->getName()) ?></option>
+            <?php endif; ?>
+        
+     
+    <?php endforeach; ?>
+ 
+<?php endif; ?>
+</select>
+</div>
+<?php endif; ?>
+
+

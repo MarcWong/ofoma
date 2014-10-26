@@ -1,0 +1,19 @@
+<?php if($this->getCurrencyCount()>1): ?>
+<div class="form-currency">
+<select id="form-currency" name="form-currency">
+
+    <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+        
+            <?php if($_code!=$this->getCurrentCurrencyCode()): ?>
+                
+                <option value="<?php echo $this->getSwitchCurrencyUrl($_code) ?>"><?php echo $_code ?></option>
+            <?php else: ?>
+                <option selected><?php echo $_code ?></option>
+            <?php endif; ?>
+        
+     
+    <?php endforeach; ?>
+ 
+</select>
+</div>
+<?php endif; ?>

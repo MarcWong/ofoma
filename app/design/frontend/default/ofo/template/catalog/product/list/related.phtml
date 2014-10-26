@@ -1,0 +1,138 @@
+<?php if($this->getItems()->getSize()): ?>    
+<?php if(!themeOptions('hide_rightblock')) { ?>
+			
+                   
+   <div class="related-sidebar">
+	<!-- related -->
+
+  <h2><?php echo $this->__('Related products') ?></h2>
+  <div class="clear"></div>
+  <div class="bxslider">
+
+      <?php foreach($this->getItems() as $_product): $_i_related++; ?>
+
+      <!-- box -->
+<div class="box-mini-product">
+
+
+<div class="image">
+<a href="<?php echo $_product->getProductUrl() ?>">
+<img class="fade-image" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(217,300) ?>">
+</a>
+</div>
+
+<div class="name">
+<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()); ?></a>
+</div>
+
+<div class="price clearfix">
+<?php echo $this->getPriceHtml($_product, true) ?>
+</div>
+
+</div>
+      
+    
+      <!--/ box-->        
+            
+        <?php endforeach; ?>
+
+  </div>
+  <script type="text/javascript"><!--
+jQuery(document).ready(function() {
+      
+      jQuery('.related-sidebar .bxslider').bxSlider({
+	    mode: 'vertical',
+	    pager: false,
+	    infiniteLoop: false
+      });
+	
+});
+
+--></script>
+<?php } else { ?>
+<h5 class="related-product-h5"><?php echo $this->__('Related products') ?></h5>
+<div class="box-related-wrapper">
+<div class="box-collateral box-related clearfix">
+    <div class="slider">
+   
+  <?php $_i_related = -1; ?>
+        <?php foreach($this->getItems() as $_product): $_i_related++; ?>
+            
+            
+          
+<div class="item slide"> 
+
+<!-- box -->
+
+      <div class="box-product-item">
+
+<div class="view-first">
+
+<div class="view-content">
+
+<div class="image">
+    <?php include('view/labels.phtml')  ?>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+			
+<a href="<?php echo $_product->getProductUrl() ?>">
+<img class="fade-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(217,300) ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>">
+</a>
+</div>
+
+<div class="name">
+<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()); ?></a>
+</div>
+
+<div class="price clearfix">
+<?php echo $this->getPriceHtml($_product, true) ?>
+</div>
+
+<div class="box-product-buttons clearfix">
+    <a onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')" class="buttons-cart"><?php echo $this->__('Add to cart') ?></a>
+    <a onclick="setLocation('<?php echo $this->getAddToWishlistUrl($_product) ?>')" class="buttons-wish" title="<?php echo $this->__('Add to Wishlist') ?>"></a>
+    <a onclick="setLocation('<?php echo $this->getAddToCompareUrl($_product) ?>')" class="buttons-compare" title="<?php echo $this->__('Add to Compare') ?>"></a>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+    
+      <!--/ box-->
+                      
+</div>
+ <?php endforeach ?>
+</div>
+
+</div>
+<div class="prev related-arrow"></div>
+<div class="next related-arrow"></div>
+</div>
+<?php if($this->getItems()->getSize() > 1): ?>
+        <script type="text/javascript">
+            jQuery('.related-arrow.prev').addClass('disabled');
+            jQuery('.box-related').iosSlider({
+                desktopClickDrag: true,
+                snapToChildren: true,
+                infiniteSlider: false,
+                navNextSelector: '.related-arrow.next',
+                navPrevSelector: '.related-arrow.prev',
+      
+                onFirstSlideComplete: function(){
+                    jQuery('.related-arrow.prev').addClass('disabled');
+                },
+                onLastSlideComplete: function(){
+                    jQuery('.related-arrow.next').addClass('disabled');
+                },
+                onSlideChange: function(){
+                    jQuery('.related-arrow.prev').removeClass('disabled');
+                    jQuery('.related-arrow.next').removeClass('disabled');
+                }
+            });               
+        </script>           
+    <?php endif; ?>  
+
+<?php } ?>
+<?php endif; ?>

@@ -1,0 +1,206 @@
+.etheme_cp{
+    position: fixed;
+    left:0;
+    top:38px;
+    z-index: 1000;
+    width: 145px;
+    border-left:0;
+    padding:15px;
+    border:1px solid #acacac;
+    border-top:0;
+    background: #fff url(../images/pattern_for_block.png);
+}
+
+.etheme_cp a{
+    color:#00a1db;
+}
+
+.etheme_cp p{
+    font-size:11px;
+}
+
+.etheme_cp_btn_show {
+    background: url(../images/etheme_cp_btn_show.png) no-repeat top center;
+    width: 56px;
+    height: 70px;
+    position: fixed;
+    left:0px;
+    top:38px; 
+    cursor:pointer;  
+    z-index:1000;
+}
+
+.etheme_cp_btn_show:hover {
+    background-position: bottom ;
+}
+
+.etheme_cp .etheme_cp_head{
+    margin:-15px;
+}
+
+.etheme_cp .etheme_cp_head .etheme_cp_btn_close{
+    background: url(../images/btn_remove.png) no-repeat top center;
+    width:14px;
+    height:14px;
+    float:right;
+    margin: 15px 10px 0 13px;
+    cursor:pointer;
+}
+
+.etheme_cp .etheme_cp_head .etheme_cp_btn_close:hover{
+    background-position: bottom;
+}
+
+.etheme_cp .etheme_cp_head h3{
+    text-transform: uppercase;
+    float:left;
+    display: block;
+    padding:10px 0 0 15px;
+    font-size:16px;
+}
+
+.etheme_cp .etheme_cp_content{
+    margin:15px 0 0 0;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section {
+    width: 100%;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .etheme_cp_section_header{
+    width: 100%;
+    margin-bottom:5px;
+    border-bottom: 1px solid #ddd;
+    padding:10px 0 0 0;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .etheme_cp_section_header h3{
+    color:#090909;
+    float:left;
+    font-size:14px;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .etheme_cp_section_header .etheme_cp_btn_clear{
+    float:right;
+    margin: 3px 5px 0;
+    cursor:pointer;
+    font-size:10px;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .pattern_select {
+    width:36px;
+    height:36px;
+    float:left;
+    margin:0 15px 15px 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border:1px solid #ddd;
+    cursor: pointer;
+}
+
+
+.etheme_cp .etheme_cp_content .color_block  {
+    margin:0 0 10px;
+}
+
+.etheme_cp .etheme_cp_content .color_block .color_block_label {
+    float:left;
+    font-size:11px;
+    padding: 9px 0;
+}
+
+.etheme_cp .etheme_cp_content .color_block #colorSelector {
+    float:right;
+    margin:0 0 10px 0;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .pattern_select.selected {
+    border-color:#090909;
+}
+
+.etheme_cp .etheme_cp_content .etheme_cp_section .pattern_select.last {
+    margin-right:0;
+}
+
+.etheme_cp .etheme_cp_content .pattern_selecting {
+    padding: 10px 0 0 0 ;
+}
+
+.etheme_cp .etheme_cp_content .pattern_selecting li {
+    display: block;
+    clear: both;
+    height:47px;
+}
+
+/*     Carousel    */
+
+.pattern_carousel .jcarousel-container-vertical {
+    height: 218px;
+    overflow: hidden;
+}
+
+.pattern_carousel .jcarousel-clip {
+    overflow: hidden;
+}
+.pattern_carousel .jcarousel-clip-vertical {
+    margin:20px 0 0;
+    height: 188px;
+}
+
+
+/**
+ *  Vertical Buttons
+ */
+.pattern_carousel .jcarousel-next-vertical {
+    position: absolute;
+    bottom: 0;
+    left: 48px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../images/next-vertical.png) no-repeat 0 0;
+}
+
+.pattern_carousel .jcarousel-next-vertical:hover,
+.pattern_carousel .jcarousel-next-vertical:focus {
+    background-position: 0 -32px;
+}
+
+.pattern_carousel .jcarousel-next-vertical:active {
+    background-position: 0 -64px;
+}
+
+.pattern_carousel .jcarousel-next-disabled-vertical,
+.pattern_carousel .jcarousel-next-disabled-vertical:hover,
+.pattern_carousel .jcarousel-next-disabled-vertical:focus,
+.pattern_carousel .jcarousel-next-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}
+
+.pattern_carousel .jcarousel-prev-vertical {
+    position: absolute;
+    top: 0;
+    left: 48px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(../images/prev-vertical.png) no-repeat 0 0;
+}
+
+.pattern_carousel .jcarousel-prev-vertical:hover,
+.pattern_carousel .jcarousel-prev-vertical:focus {
+    background-position: 0 -32px;
+}
+
+.pattern_carousel .jcarousel-prev-vertical:active {
+    background-position: 0 -64px;
+}
+
+.pattern_carousel .jcarousel-prev-disabled-vertical,
+.pattern_carousel .jcarousel-prev-disabled-vertical:hover,
+.pattern_carousel .jcarousel-prev-disabled-vertical:focus,
+.pattern_carousel .jcarousel-prev-disabled-vertical:active {
+    cursor: default;
+    background-position: 0 -96px;
+}

@@ -1,0 +1,912 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script type="text/javascript">var slide_on=false;</script>
+<?php 
+function themeOptions ($themeOption) {
+	switch ($themeOption) {
+     
+     /* GENERAL */
+     
+     case 'additionalLink':
+	   return Mage::getStoreConfig('mygeneral/generaloptions/additional_nav', Mage::app()->getStore()->getId());
+	 break;
+	case 'additionalLinkUrl':
+	   return Mage::getStoreConfig('mygeneral/generaloptions/additional_nav_href', Mage::app()->getStore()->getId());
+	 break;
+	 case 'additionalLink2':
+	   return Mage::getStoreConfig('mygeneral/generaloptions/additional_nav2', Mage::app()->getStore()->getId());
+	 break;
+	case 'additionalLinkUrl2':
+	   return Mage::getStoreConfig('mygeneral/generaloptions/additional_nav_href2', Mage::app()->getStore()->getId());
+	 break;
+     case 'menutype':
+       return Mage::getStoreConfig('mygeneral/generaloptions/menutype', Mage::app()->getStore()->getId());
+	 break;
+	 
+     case 'themelayout':
+       return Mage::getStoreConfig('mygeneral/generaloptions/themelayout', Mage::app()->getStore()->getId());
+	 break;
+     case 'responsive':
+       return Mage::getStoreConfig('mygeneral/generaloptions/responsive', Mage::app()->getStore()->getId() == 1);
+	 break;
+     case 'floattopmenu':
+       return Mage::getStoreConfig('mygeneral/generaloptions/floattopmenu', Mage::app()->getStore()->getId() == 1);
+	 break;
+	 case 'googlefont':
+	   return Mage::getStoreConfig('mygeneral/generaloptions/googlefont', Mage::app()->getStore()->getId());
+	 break; 
+     
+     
+     case 'topbtn':
+	   return (Mage::getStoreConfig('mygeneral/generaloptions/topbtn', Mage::app()->getStore()->getId()) == 1);
+	 break;
+     case 'enable_ajax':
+       return (Mage::getStoreConfig('mygeneral/generaloptions/enable_ajax', Mage::app()->getStore()->getId()) == 1);
+     break;
+     case 'use_animation':
+       return (Mage::getStoreConfig('mygeneral/generaloptions/use_animation', Mage::app()->getStore()->getId()) == 1);
+     break;
+
+     case 'hide_wish':
+       return (Mage::getStoreConfig('mygeneral/generaloptions/hide_wish', Mage::app()->getStore()->getId()) == 1);
+     break;
+     case 'hide_compare':
+       return (Mage::getStoreConfig('mygeneral/generaloptions/hide_compare', Mage::app()->getStore()->getId()) == 1);
+     break;
+     case 'hide_cart':
+       return (Mage::getStoreConfig('mygeneral/generaloptions/hide_cart', Mage::app()->getStore()->getId()) == 1);
+     break;
+
+
+      /* Background */
+     
+     case 'pattern':
+	   return Mage::getStoreConfig('mygeneral/background/pattern', Mage::app()->getStore()->getId());
+	 break; 
+     case 'maincolor':
+	   return Mage::getStoreConfig('mygeneral/background/maincolor', Mage::app()->getStore()->getId());
+	 break;  
+     case 'bg_repeat':
+	   return Mage::getStoreConfig('mygeneral/background/bg_repeat', Mage::app()->getStore()->getId());
+	 break;  
+     case 'bg_attachment':
+	   return Mage::getStoreConfig('mygeneral/background/bg_attachment', Mage::app()->getStore()->getId());
+	 break;  
+     case 'bg_position_x':
+	   return Mage::getStoreConfig('mygeneral/background/bg_position_x', Mage::app()->getStore()->getId());
+	 break; 
+     case 'bg_position_y':
+	   return Mage::getStoreConfig('mygeneral/background/bg_position_y', Mage::app()->getStore()->getId());
+	 break;   
+     
+     /* SLIDESHOW */
+      case 'fullwidthslider':
+       return Mage::getStoreConfig('mygeneral/slideshow/fullwidthslider', Mage::app()->getStore()->getId() == 1);
+	 break;
+	
+     case 'autoplay':
+	   return (Mage::getStoreConfig('mygeneral/slideshow/autoplay', Mage::app()->getStore()->getId()));
+	 break;
+
+     case 'delay':
+	   return Mage::getStoreConfig('mygeneral/slideshow/delay', Mage::app()->getStore()->getId());
+	 break;
+	
+	
+     /* CAROUSELS */
+     
+     case 'new_carousel':
+	   return (Mage::getStoreConfig('mygeneral/carousels/new_carousel', Mage::app()->getStore()->getId()) == 1);
+	 break;
+
+     case 'sale_carousel':
+	   return Mage::getStoreConfig('mygeneral/carousels/sale_carousel', Mage::app()->getStore()->getId() == 1);
+	 break;
+     case 'new_carousel_limit':
+	   return Mage::getStoreConfig('mygeneral/carousels/new_carousel_limit', Mage::app()->getStore()->getId());
+	 break;
+     case 'sale_carousel_limit':
+	   return Mage::getStoreConfig('mygeneral/carousels/sale_carousel_limit', Mage::app()->getStore()->getId());
+	 break;
+	
+     /* PRODUCT LIST */
+     case 'productboxsize':
+       return Mage::getStoreConfig('mygeneral/product_list/productboxsize', Mage::app()->getStore()->getId());
+	 break;
+     case 'layer':
+       return Mage::getStoreConfig('mygeneral/product_list/layer', Mage::app()->getStore()->getId());
+	 break;
+     case 'new_label':
+       return (Mage::getStoreConfig('mygeneral/product_list/new_label', Mage::app()->getStore()->getId()) == 1);
+	 break;
+     case 'new_label_text':
+       return Mage::getStoreConfig('mygeneral/product_list/new_label_text', Mage::app()->getStore()->getId());
+	 break;
+     case 'sale_label':
+       return (Mage::getStoreConfig('mygeneral/product_list/sale_label', Mage::app()->getStore()->getId()) == 1);
+	 break;
+     case 'sale_label_text':
+       return Mage::getStoreConfig('mygeneral/product_list/sale_label_text', Mage::app()->getStore()->getId());
+	 break;
+     /* SHARE */
+     case 'facebookgroupid':
+	   return Mage::getStoreConfig('mygeneral/share/facebookgroupid', Mage::app()->getStore()->getId());
+	 break;
+
+     case 'twittername':
+	   return Mage::getStoreConfig('mygeneral/share/twittername', Mage::app()->getStore()->getId());
+	 break;
+     case 'use_share':
+	   return (Mage::getStoreConfig('mygeneral/share/use_share', Mage::app()->getStore()->getId()) == 1);
+	 break;
+     case 'share_code':
+	   return Mage::getStoreConfig('mygeneral/share/share_code', Mage::app()->getStore()->getId());
+	 break;
+     
+     /* PRODUCT PAGE */
+     
+     case 'use_zoom':
+	   return (Mage::getStoreConfig('mygeneral/productpage/use_zoom', Mage::app()->getStore()->getId()) == 1);
+	 break;
+     case 'zoom_width':
+	   return (Mage::getStoreConfig('mygeneral/productpage/zoom_width', Mage::app()->getStore()->getId()));
+	 break;
+     case 'use_carousel':
+	   return (Mage::getStoreConfig('mygeneral/productpage/use_carousel', Mage::app()->getStore()->getId()) == 1);
+	 break;
+     case 'hide_rightblock':
+	   return (Mage::getStoreConfig('mygeneral/productpage/hide_rightblock', Mage::app()->getStore()->getId()) == 1);
+	 break;
+
+	
+     /* COLORS */
+     case 'skin':
+       return Mage::getStoreConfig('mygeneral/colors/skin', Mage::app()->getStore()->getId());
+	 break;
+     case 'button_color':
+	   return Mage::getStoreConfig('mygeneral/colors/button_color');
+	 break;
+     case 'button_hover':
+	   return Mage::getStoreConfig('mygeneral/colors/button_hover');
+	 break;
+     case 'menu_bg':
+	   return Mage::getStoreConfig('mygeneral/colors/menu_bg');
+	 break;
+	
+     case 'firstmenu_bg':
+	   return Mage::getStoreConfig('mygeneral/colors/firstmenu_bg');
+	 break;
+     case 'secondmenu_bg':
+	   return Mage::getStoreConfig('mygeneral/colors/secondmenu_bg');
+	 break;
+     case 'headermenu_bg':
+	   return Mage::getStoreConfig('mygeneral/colors/headermenu_bg');
+	 break;
+	
+     case 'menu_links_color':
+	   return Mage::getStoreConfig('mygeneral/colors/menu_links_color');
+	 break;
+
+     case 'footer_bg':
+	   return Mage::getStoreConfig('mygeneral/colors/footer_bg');
+	 break;
+	case 'footer_link_color':
+	   return Mage::getStoreConfig('mygeneral/colors/footer_link_color');
+	 break;
+	case 'product_border_color':
+	   return Mage::getStoreConfig('mygeneral/colors/product_border_color');
+	 break;
+
+     /* Custom code */
+     
+     case 'customcss':
+	   return Mage::getStoreConfig('mygeneral/customcode/customcss');
+	 break;
+     case 'customjs':
+	   return Mage::getStoreConfig('mygeneral/customcode/customjs');
+	 break;
+	
+	}
+}
+?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<?php if(themeOptions('googlefont')!='Arial'): ?>
+<link href='//fonts.googleapis.com/css?family=<?php echo themeOptions('googlefont'); ?>&subset=latin' rel='stylesheet' type='text/css'>
+<?php endif; ?>
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]> 
+</script>
+<![endif]-->
+<script type="text/javascript">
+  var BASE_URL = '<?php echo $this->getBaseUrl(); ?>';
+  var clearenceUrl = '<?php echo themeOptions('additionalLinkUrl'); ?>';
+</script>
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+
+<!-- SKIN MENU -->
+<?php $menutype = themeOptions('menutype'); ?>
+<?php if($menutype == 1): ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/menu1.css'); ?>" media="screen"/>
+<?php elseif($menutype == 2): ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/menu2.css'); ?>" media="screen"/>
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('varien/menu.js'); ?>"></script>
+<?php endif; ?>
+<?php if(themeOptions('use_animation')): ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/animations.css'); ?>" media="screen"/>
+<?php endif; ?>
+<?php if(themeOptions('responsive')): ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/responsive.css'); ?>" media="screen"/>
+<?php endif; ?>
+
+<!-- SKIN ZOOM -->
+<?php $use_zoom = themeOptions('use_zoom'); ?>
+<?php if($use_zoom): ?>
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('zoom/easyzoom.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/easyzoom.css'); ?>" media="screen"/>
+<?php endif; ?>
+<!-- SWIPEBOX -->
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('jquery/swipebox/ios-orientationchange-fix.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('jquery/swipebox/jquery.swipebox.min.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getJsUrl('jquery/swipebox/swipebox.css'); ?>" media="screen"/>
+<!-- REVOLUTION -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('rs-plugin/revolution-css/fullwidth.css'); ?>" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('rs-plugin/css/settings.css'); ?>" media="screen" />
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('revolution/jquery.themepunch.plugins.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('revolution/jquery.themepunch.revolution.js'); ?>"></script>
+    
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('slideshow/jquery.slider.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/slider.css'); ?>" media="all" />
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('jquery/jquery.selectbox.js'); ?>"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/selectbox.css'); ?>" media="screen"/>
+    
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/jquery.bxslider.css'); ?>" />
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('jquery/jquery.bxslider.min.js'); ?>"></script>
+    
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('twitter/jquery.tweet.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo $this->getJsUrl('jquery/skrollr.min.js'); ?>"></script>
+  
+<?php
+
+$selectors = Array();
+
+$selectors['button_color_bg'] = '.buttons-cart:hover, .footer-social a:hover, .bx-wrapper .bx-next:hover, .bx-wrapper .bx-prev:hover, .shop-about .shop-about-text a.more:hover, .minicart-wrapper .icon:hover, .toolbar, .product-view .product-img-box .main-image a.lightbox-btn:hover, #footer #message a:hover, .prev:hover, .next:hover, .buttons-cart:hover, .product-tabs li:hover a, .social-share .image:hover, .quantity_box_button_down:hover, .quantity_box_button_up:hover, .minicart-wrapper .minicart, .widget_custom_box_left #custom_box_icon, .show-more-button, .saleproduct_label, button.button, .button, .box-product-buttons a:not(.buttons-cart)';
+
+$selectors['button_color_text'] = '.shop-about .shop-about-news li h2 a:hover, #nav.nav1 .level1 > a > span, .block .block-content .product-name a:hover, .block-layered-nav dt:hover, #nav > li.active > a, #nav .custommenuitem.blog a, a, .box-product-item .name a:hover, #nav ul li a:hover, .left-categorys a:hover, .block-layered-nav dd li a:hover, #header_menu .links li a:hover, #nav.nav1 > li > ul > li ul > li a:hover, #nav.nav1 .custom_menu_item li.level2 a:hover';
+
+$selectors['button_hover_bg'] = 'button.button:hover, .button:hover, .box-product-buttons a:hover:not(.buttons-cart), .product-tabs li a, .quantity_box_button_up, .quantity_box_button_down, input.qty, .custom-footer-contact .contact-icon, .footer-social a, .minicart-wrapper .icon, .newproduct_label, .buttons-cart, .show-more-button:hover, .shop-about .shop-about-text .text';
+
+$selectors['button_color_border'] = '.postInfo, .postWrapper .postInfo .leftInfo, .postWrapper .postInfo .centerInfo, .shop-about .shop-about-text a.more:hover, .block-cart-header #header-items, .widget_custom_box_left .custom_box'; 
+
+$selectors['menu_bg'] = '.nav-container';
+
+$selectors['firstmenu_bg'] = '#nav > li.over, #nav > li:hover, #nav > li > ul, #nav div, #nav .chield, #nav.nav1 > li > ul > li ul, #nav li div.custom_menu_item, #nav.nav2 > li > ul > li ul ul';
+
+$selectors['secondmenu_bg'] = '#nav.nav1 > li > ul > li ul, #nav.nav2 > li > ul > li ul, #nav li div.custom_menu_item, #nav.nav2 > li > ul > li ul ul ul';
+
+
+$selectors['headermenu_bg'] = '.header-menu-wrapper, .selectbox .dropdown';
+
+$selectors['menu_links_color'] = '#nav > li > ul > li ul > li a, #nav .custom_menu_item li.level2 a, #nav ul li a';
+
+$selectors['footer_bg'] = '.footer-container';
+
+$selectors['footer_link_color'] = '#footer .column, #footer .column a';
+
+$selectors['product_border_color'] = '.box-product-item:hover, .products-list li.item:hover';
+
+function jsString($str='') { 
+    return trim(preg_replace("/('|\"|\r?\n)/", '', $str)); 
+}
+
+?>
+
+<style type="text/css">
+<?php
+// Big product boxn
+if(themeOptions('productboxsize') == 2) { ?>
+@media only screen and (min-width: 1001px) {
+
+	.box-product-item {
+	 width:294px;
+	}
+	
+	.products-grid .box-product-item {
+	 width:333px;
+	}
+	
+	.buttons-cart {
+	    width: 157px;
+	}
+	
+	.newproduct_label {
+	 margin-left:218px;
+	}
+	.product-view .box-up-sell .slide, .product-view .box-related .slide {
+		width:310px;
+	}
+}
+<?php } ?>
+    /* Colors & Skins */
+<?php
+// Dark skin
+if(themeOptions('skin') == 2) { ?>
+ 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #C2A26F; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #3C4446; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #101211; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #C2A26F; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #C2A26F; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #1E1F21; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #1E1F21; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #23272A; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #1E1F21; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #95A7A7; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #D4A66E; }
+
+body {
+	background-color:#08090b!important;
+}
+
+ .header-container {
+background-color:#202325;
+}
+
+.promo-block, .module-box, .shop-about, .shop-newsletter, .page .main-container, .top-bread, .block, .block-cart-header #header-items, .cart .totals, .cart .discount, .cart .shipping, .widget_custom_box_left .custom_box, .data-table tbody tr:hover, .opc .step, .col2-set .col-1, .col2-set .col-2, .fieldset {
+ background-color:#1e1f21!important;
+}
+.block-cart-header {
+ background-color:transparent!important;
+}
+a, #twitter_update_list {
+ color:#fff;
+}
+
+a:hover {
+ color:#C2A26F;
+}
+
+#nav > li a {
+ color:#fff;
+}
+
+.nav-container, .col3-set .col-2, .footer-wrapper, .data-table thead tr td, .data-table thead tr th, #shopping-cart-table, .data-table tbody th, .data-table tbody td, .social-share, .top-bread {
+ border-color:#2a2c2b;
+}
+
+.block .block-title  {
+ border-color:#ccc;
+}
+
+.related-sidebar h2, .block .block-title, .block-title h2, .block .block-title strong span, .shop-about h1, .module-box .box-heading, .shop-about .shop-about-news li h2 a, h1, h2, h3, h4, h5, .cart .discount h2, .cart .shipping h2, .cart .totals tfoot th strong, .cart .totals tfoot td strong, .form-list label, #opc-login h4 {
+ color:#fff;
+}
+
+body, .shop-newsletter .subscribe-logo, .shop-newsletter .subscribe-form, .shop-about .shop-about-news .text, .product-view .product-shop .short-description {
+ color:#ccc;
+}
+
+.block-content, .product-view .box-up-sell, .product-view .box-related {
+    background-color: transparent;
+}
+
+.block-layered-nav dt, .left-categorys a, .block-layered-nav dd li {
+  color:#ccc;
+}
+
+.box-product-item {
+  border-color:#1e1f21;
+}
+
+.box-product-item .name a, .block .block-content .product-name a, .related-sidebar .name a {
+ color:#fff;
+}
+
+.box-product-item .price, .block-cart-header #header-items li.item .price, .regular-price .price, .product-view .product-shop .addtocont .product-code strong, .availability.in-stock span {
+ color:#a6a6a6;
+}
+
+.special-price .price, .block-cart-header .summary .price {
+ color:#c59f6e;
+}
+
+.data-table thead tr td, .data-table thead tr th, .data-table tfoot tr, .data-table tr.odd, .data-table tr, .product-tabs li.active a, .product-collateral .product-tabs-content {
+ background-color:#333!important;
+}
+
+.product-view .product-shop .white-back .line, .postWrapper .line {
+ background-color:#ccc;
+}
+.header .welcome-msg {
+    color: #fff;
+}
+ .header .welcome-msg a {
+   color:#c69f6d;
+}
+
+.page.home .main-container {
+ background:none!important;
+}
+<?php }
+// Green skin
+elseif(themeOptions('skin') == 3) { ?>
+ 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #92b51d; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #4d6110; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #92b51d; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #92b51d; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #4D6110; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #a6ad26; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #344008; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #1E1F21; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #79ab1d; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #f6faf2; }
+
+<?php } // Lightblue skin
+elseif(themeOptions('skin') == 4) { ?>
+ 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #3a72c7; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #103763; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #103763; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #1780d6; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #3a72c7; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #3261cf; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #2b91d9; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #ccdbed; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #03121c; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #A3A8A9; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #f2f6fc; }
+<?php } // Orange skin
+elseif(themeOptions('skin') == 5) { ?>
+ 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #eb5726; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #802a08; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #802a08; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #eb5726; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #e04920; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #e0572d; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #401608; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #000000; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #241104; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #A3A8A9; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #EB5726; }
+<?php } // Red skin
+elseif(themeOptions('skin') == 6) { ?>
+ 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #ff0022; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #800917; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #800917; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #de2f43; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #de2121; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #de2f43; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #941e1e; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #000000; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #241104; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #A3A8A9; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #800917; }
+   
+<?php } // Cyan skin
+elseif(themeOptions('skin') == 7) { ?>
+ 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #4ca697; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #106151; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #106151; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #4ca697; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #1dab8f; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #26aba2; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #08403a; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #ffffff; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #241104; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #A3A8A9; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #4ca697; }
+<?php } // Pastel skin
+
+elseif(themeOptions('skin') == 8) { ?>
+ 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #d6d3d2; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #75716f; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #FFFFFF; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #b5b5b5; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #d6d3d2; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #707070; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #474747; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #212121; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #ffffff; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #241104; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #A3A8A9; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #e0e0e0; }
+<?php }
+else {
+?> 
+    <?php echo jsString($selectors['button_color_bg']); ?>              { background-color: #<?php echo themeOptions('button_color') ?>; }
+    
+    <?php echo jsString($selectors['button_hover_bg']); ?>          { background-color: #<?php echo themeOptions('button_hover') ?>; }
+  
+    <?php echo jsString($selectors['menu_bg']); ?>          { background-color: #<?php echo themeOptions('menu_bg') ?>; }
+    
+    <?php echo jsString($selectors['button_color_text']); ?>          { color: #<?php echo themeOptions('button_color') ?>; }
+ 
+    <?php echo jsString($selectors['button_color_border']); ?>          { border-color: #<?php echo themeOptions('button_color') ?>; }
+    
+    <?php echo jsString($selectors['firstmenu_bg']); ?>              { background-color: #<?php echo themeOptions('firstmenu_bg') ?>; }
+    
+    <?php echo jsString($selectors['secondmenu_bg']); ?>              { background-color: #<?php echo themeOptions('secondmenu_bg') ?>; }
+    
+    <?php echo jsString($selectors['headermenu_bg']); ?>              { background-color: #<?php echo themeOptions('headermenu_bg') ?>; }
+    
+    <?php echo jsString($selectors['menu_links_color']); ?>              { color: #<?php echo themeOptions('menu_links_color') ?>; }
+    
+    <?php echo jsString($selectors['footer_bg']); ?>              { background-color: #<?php echo themeOptions('footer_bg') ?>; }
+    
+    <?php echo jsString($selectors['footer_link_color']); ?>              { color: #<?php echo themeOptions('footer_link_color') ?>; }
+    
+    <?php echo jsString($selectors['product_border_color']); ?>          { border-color: #<?php echo themeOptions('product_border_color') ?>; }
+    
+<? } ?>
+</style>
+
+
+<script type="text/javascript">
+<?php if(themeOptions('floattopmenu')): ?>
+window.onload = function() {
+		skrollr.init({
+			forceHeight: false
+		});
+	}
+<?php endif; ?>
+var tpj=jQuery;
+tpj.noConflict();
+
+tpj(document).ready(function() {
+
+if (tpj.fn.cssOriginal!=undefined)
+	tpj.fn.css = tpj.fn.cssOriginal;
+
+	tpj('.fullwidthbanner').revolution(
+		{
+			delay:<?php echo themeOptions('delay') ?>,
+			startwidth:980,
+			startheight:480,
+
+			onHoverStop:"on",						// Stop Banner Timet at Hover on Slide on/off
+
+			thumbWidth:100,							// Thumb With and Height and Amount (only if navigation Tyope set to thumb !)
+			thumbHeight:50,
+			thumbAmount:3,
+
+			hideThumbs:0,
+			navigationType:"bullet",				// bullet, thumb, none
+			navigationArrows:"solo",				// nexttobullets, solo (old name verticalcentered), none
+
+			navigationStyle:"round",				// round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+
+
+			navigationHAlign:"center",				// Vertical Align top,center,bottom
+			navigationVAlign:"bottom",					// Horizontal Align left,center,right
+			navigationHOffset:0,
+			navigationVOffset:20,
+
+			soloArrowLeftHalign:"left",
+			soloArrowLeftValign:"center",
+			soloArrowLeftHOffset:20,
+			soloArrowLeftVOffset:0,
+
+			soloArrowRightHalign:"right",
+			soloArrowRightValign:"center",
+			soloArrowRightHOffset:20,
+			soloArrowRightVOffset:0,
+
+			touchenabled:"on",						// Enable Swipe Function : on/off
+
+
+			stopAtSlide:<?php echo themeOptions('autoplay') ?>,			// Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+			stopAfterLoops:0,						// Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+
+			hideCaptionAtLimit:0,					// It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+			hideAllCaptionAtLilmit:0,				// Hide all The Captions if Width of Browser is less then this value
+			hideSliderAtLimit:0,					// Hide the whole slider, and stop also functions if Width of Browser is less than this value
+
+
+			fullWidth:"on",
+
+			shadow:0								//0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
+
+		});
+
+
+
+
+});
+</script>
+
+
+
+<script type="text/javascript"><!--
+
+jQuery(document).ready(function() {
+	
+	
+      // Move search to menu
+      
+      jQuery('.form-search button.button').insertBefore('.form-search input.input-text').show();
+      jQuery('.top-bar').insertBefore('#nav').show();
+     
+      
+
+      // Show blog posts in News
+     // $('.shop-about-news ul').html($('#awbloglatest').html());      
+     
+
+      // Blocks sliders
+      jQuery('.shop-about-news .bxslider').bxSlider({
+	    mode: 'vertical',
+	    pager: false
+      });
+      
+      jQuery('.shop-about-slider .bxslider').bxSlider({
+	    mode: 'horizontal',
+	    auto: true,
+	    controls: false
+      });
+      
+        jQuery(function(){        
+        jQuery(".widget_facebook_right").hover(function(){            
+        jQuery(".widget_facebook_right").stop(true, false).animate({right: "0" }, 800, 'easeOutQuint' );        
+        },
+  function(){            
+        jQuery(".widget_facebook_right").stop(true, false).animate({right: "-245" }, 800, 'easeInQuint' );        
+        },1000);    
+  });
+	
+	
+	  jQuery(function(){        
+        jQuery(".widget_custom_box_left").hover(function(){            
+        jQuery(".widget_custom_box_left").stop(true, false).animate({left: "0" }, 800, 'easeOutQuint' );        
+        },
+  function(){            
+        jQuery(".widget_custom_box_left").stop(true, false).animate({left: "-245" }, 800, 'easeInQuint' );        
+        },1000);    
+  });
+	  
+	  
+      // Image animation
+      jQuery(".fade-image").live({
+        mouseenter:
+           function()
+           {
+				jQuery(this).stop().fadeTo(300, 0.6);
+           },
+        mouseleave:
+           function()
+           {
+				jQuery(this).stop().fadeTo(300, 1);
+           }
+       }
+    );
+     
+
+    jQuery('#header_menu select, .pager select').selectbox();
+    
+	
+	
+	jQuery(".show-more-button").live('click', function(event) {
+	 
+	    event.preventDefault();
+	    
+	    var i = 0;
+	    
+	    var parent_container = jQuery(this).parent();
+	    
+	    
+	    parent_container.find(jQuery('.hidethisblock .box-product-item')).each(function(){
+	      if(i < <?php echo themeOptions('new_carousel_limit'); ?>) {
+		    jQuery(this).hide().appendTo(parent_container.find(jQuery('.more-module'))).slideDown();
+		    
+	      }
+	      i++;
+	      
+	    });
+	    
+	    
+	    jQuery('html, body').delay(500).animate({
+		    scrollTop: parent_container.find(jQuery('.more-module .box-product-item')).last().offset().top
+		    
+		}, 500);
+	    
+	    
+			   
+	    if(parent_container.find(jQuery('.hidethisblock .box-product-item')).length == 0) {
+	      jQuery(this).fadeOut();
+	    }
+	      
+	});
+
+
+    
+  
+});
+
+<?php echo themeOptions('customjs'); ?>
+
+--></script>
+
+<style>
+	
+	
+	body{
+	    background-color:#<?php echo themeOptions('maincolor') ?>;
+	    background-attachment: <?php echo themeOptions('bg_attachment') ?>;
+	    background-position: <?php echo themeOptions('bg_position_y') ?> <?php echo themeOptions('bg_position_x') ?>;
+	    background-repeat: <?php echo themeOptions('bg_repeat') ?>;
+	}  
+	
+	<?php if(themeOptions('googlefont')!='Arial'): ?>
+	body {
+		font-family: <?php 
+		  $googlefont_name = explode(":", themeOptions('googlefont'));
+		  $googlefont_name = $googlefont_name[0];
+		  
+		  echo $googlefont_name;
+		 ?>;
+	}
+	<?php endif; ?>
+	
+	<?php if(themeOptions('fullwidthslider')):
+	?>
+	.fullwidthbanner-container {
+		width:100%;
+	}
+	<?php endif; ?>
+	
+	<?php if(themeOptions('hide_wish')): ?>
+	   
+		.buttons-wish, #header_menu .links li:nth-child(2) {
+			display:none!important;
+		}
+		.buttons-compare {
+			margin-left:13px;
+		}
+		
+	<?php endif; ?>
+	<?php if(themeOptions('hide_compare')): ?>
+	   
+		.buttons-compare {
+			display:none!important;
+		}
+		
+	<?php endif; ?>
+	
+	<?php if(themeOptions('hide_cart')): ?>
+	   
+		.buttons-cart, .minicart-wrapper, .top-link-cart-li, .quanitybox, #header_menu .links li:nth-child(4) a {
+			display:none!important;
+		}
+		.product-buttons .product-buttons-row:nth-child(1){
+			display:none;
+		}
+	<?php endif; ?>
+	
+	
+	<?php if(themeOptions('hide_rightblock')): ?>
+
+		.product-view .product-shop .product_right {
+			display:none;
+		}
+		.product-view .product-shop .white-back {
+			margin-right: 0;
+			width: 450px;
+		}
+		
+	<?php endif; ?>
+	
+	
+	<?php echo themeOptions('customcss'); ?>
+	
+</style>
+
+<?php if(themeOptions('pattern') && themeOptions('pattern') != ''): ?>
+    <style>
+        body{ background-image: url(<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).'wysiwyg/simplegreat/'.themeOptions('pattern') ?>); }    
+    </style>
+<?php endif; ?>
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/ie7.css'); ?>" media="screen"/>
+<![endif]-->
+<!--[if IE 9]>
+    <link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('css/ie9.css'); ?>" media="screen"/>
+<![endif]-->

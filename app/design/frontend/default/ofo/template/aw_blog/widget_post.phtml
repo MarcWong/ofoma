@@ -1,0 +1,31 @@
+<?php if ($posts = $this->getRecent()): ?>
+  
+       <ul class="bxslider">
+            <?php foreach ($posts as $post): ?>
+                <li>
+<?php
+$html= $post->getPostContent();
+
+$html=str_replace('{{media url="', Mage::getBaseUrl('media'),$html);
+$html=str_replace('"}}', "",$html);
+
+if (preg_match('/<img.+?src(?: )*=(?: )*[\'"](.*?)[\'"]/si', $html, $arrResult)) {
+    $image = '<img src="'.$arrResult[1].'"/>';
+}
+?>
+
+	
+        <a href="<?php echo $post->getAddress(); ?>"><?php echo $image; ?></a>
+
+	<h2><a href="<?php echo $post->getAddress(); ?>"><?php echo $post->getTitle(); ?></a></h2>
+
+	<div class="text"><?php echo substr(strip_tags($post->getPostContent()),0,97); ?>...</div>
+
+	<div class="date"><?php echo $post->getCreatedTime(); ?></div>
+                </li>
+            <?php endforeach; ?>
+       
+</ul>
+<?php endif; ?>
+
+

@@ -1,0 +1,33 @@
+
+  /*********************************************************************************************
+		-	SET THE SCREEN SIZES FOR THE BANNER IF YOU WISH TO MAKE THE BANNER RESOPONSIVE 	-
+  **********************************************************************************************/
+
+  /*	-	THE BANNER CONTAINER (Padding, Shadow, Border etc. )	-	*/
+
+
+.fullwidthbanner-container{
+       width:980px;
+       position:relative;
+       padding:0;
+       margin:0 auto;
+       overflow:hidden;
+       
+       margin-bottom:30px;
+}
+
+.revolution_header1 {
+       color:#fff;
+       font-size:30px;
+       text-align:center;
+       font-weight:normal;
+       text-transform: uppercase;
+       line-height: 40px;
+}
+
+.revolution_text {
+       color:#fff;
+       font-size:18px;
+       text-align:left;
+       line-height:25px;
+}

@@ -1,0 +1,37 @@
+<?php 
+    $count_labels = 0;
+	$sale = false;
+	if (themeOptions('sale_label'))
+	{
+		$specialPrice = number_format($_product->getFinalPrice(), 2);
+		$regularPrice = number_format($_product->getPrice(), 2);
+		if ($specialPrice != $regularPrice){
+            $count_labels++;
+	       	$sale = true;
+		}
+	}
+    
+	$new = false;
+	if (themeOptions('new_label'))
+	{
+        $now = date("Y-m-d H:m:s");   
+        $newFromDate = $_product->getNewsFromDate();
+        $newToDate = $_product->getNewsToDate();                                               
+        if($newFromDate < $now && $newToDate > $now){
+            $new = true;
+            $count_labels++;
+        }
+	}
+    
+    if($new){
+        ?>
+            <div class="newproduct_label"><?php echo themeOptions('new_label_text') ?></div>
+        <?php
+    }
+    
+    if($sale){
+        ?>
+            <div class="saleproduct_label <?php if($count_labels == 1) echo 'once' ?>"><?php echo themeOptions('sale_label_text') ?></div>
+        <?php
+    }
+?>

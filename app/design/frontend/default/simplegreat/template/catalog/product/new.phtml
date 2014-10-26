@@ -1,0 +1,65 @@
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+    <div class="newproducts more-module clearfix">
+      
+                <?php $i=0; foreach ($_products->getItems() as $_product): ?>
+                 
+<!-- box -->
+<?php
+	if(($i == themeOptions('new_carousel_limit'))&&(themeOptions('new_carousel'))&&($_products->getSize()>themeOptions('new_carousel_limit'))) {
+	  echo '<div class="hidethisblock">';
+	  
+	}
+?>
+      <div class="box-product-item">
+
+<div class="view-first">
+
+<div class="view-content">
+
+<div class="image">
+    <?php include('view/labels.phtml')  ?>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+			
+<a href="<?php echo $_product->getProductUrl() ?>">
+<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(217,300) ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>">
+</a>
+</div>
+
+<div class="name">
+<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()); ?></a>
+</div>
+
+<div class="price clearfix">
+<?php echo $this->getPriceHtml($_product, true) ?>
+</div>
+
+<div class="box-product-buttons clearfix">
+    <a onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')" class="buttons-cart"><?php echo $this->__('Add to cart') ?></a>
+    <a onclick="setLocation('<?php echo $this->getAddToWishlistUrl($_product) ?>')" class="buttons-wish" title="<?php echo $this->__('Add to Wishlist') ?>"></a>
+    <a onclick="setLocation('<?php echo $this->getAddToCompareUrl($_product) ?>')" class="buttons-compare" title="<?php echo $this->__('Add to Compare') ?>"></a>
+</div>
+
+</div>
+
+
+</div>
+</div>
+<?php
+$i++;
+  if(($i == $_products->getSize())&&(themeOptions('new_carousel'))&&($_products->getSize()>themeOptions('new_carousel_limit'))) {
+     echo '</div>';
+   }
+   
+  ?>  
+    
+      <!--/ box-->
+ 
+                <?php endforeach; ?>
+            
+    </div>
+    
+    <?php if((themeOptions('new_carousel'))&&($_products->getSize()>themeOptions('new_carousel_limit'))): ?>
+  <div class="show-more-button"><img src="<?php echo $this->getSkinUrl('images/show-more.png'); ?>"/> <?php echo $this->__('Show more') ?></div>
+  <?php endif; ?>
+           
+  <?php endif; ?>

@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <ThemeAdminPanel_ExtraConfig>
+            <version>1.0.0</version>
+            <depends>
+            <!-- no dependencies -->
+            </depends>
+        </ThemeAdminPanel_ExtraConfig>
+    </modules>
+	<global>
+		<models>
+            <!-- ... -->
+            <ExtraConfig>
+                <class>ThemeAdminPanel_ExtraConfig_Model</class>
+            </ExtraConfig>   
+            <!-- ... -->
+        </models>
+		<helpers>
+			<ExtraConfig>
+				<class>ThemeAdminPanel_ExtraConfig_Helper</class>
+			</ExtraConfig>
+		</helpers>
+	    <resources />
+	    <extraconfig />
+	    <blocks>
+            <mygeneral><class>ThemeAdminPanel_ExtraConfig_Block</class></mygeneral>
+		</blocks>
+	</global>
+	<!---->
+	<default>
+		<mygeneral>
+			<generaloptions>
+		
+                <menutype>1</menutype>
+                
+				<googlefont>Open Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic</googlefont>
+				<additional_nav2>Contacts</additional_nav2>
+				<additional_nav_href2>./contacts/</additional_nav_href2>
+				<additional_nav>Blog</additional_nav>
+				<additional_nav_href>./blog/</additional_nav_href>
+				<topbtn>1</topbtn>
+                <enable_ajax>1</enable_ajax>
+		<responsive>1</responsive>
+		<hide_wish>0</hide_wish>
+		<hide_compare>0</hide_compare>
+		<hide_cart>0</hide_cart>
+		<use_animation>1</use_animation>
+		<floattopmenu>1</floattopmenu>
+		
+		
+			</generaloptions>
+			<background>
+                <maincolor>F6F7F8</maincolor>
+                <pattern>default/pattern.png</pattern>
+                <bg_repeat></bg_repeat>
+                <bg_attachment></bg_attachment>
+                <bg_position_x></bg_position_x>
+                <bg_position_y></bg_position_y>
+			</background>            
+            <product_list>
+				
+				<productboxsize>1</productboxsize>
+				<layer>1</layer>
+				<sale_label>1</sale_label>
+				<sale_label_text>Sale</sale_label_text>
+				<new_label>1</new_label>
+				<new_label_text>New</new_label_text>
+            </product_list>
+			<share>
+			        <facebookgroupid>115403961948855</facebookgroupid>
+				<twittername></twittername>
+				<use_share>1</use_share>
+				
+			</share>
+			<slideshow>
+				<autoplay>-1</autoplay>
+				<fullwidthslider>0</fullwidthslider>
+				<delay>9000</delay>
+				
+			</slideshow>
+			<carousels>
+				<new_carousel>1</new_carousel>
+				<sale_carousel>1</sale_carousel>
+				<new_carousel_limit>4</new_carousel_limit>
+				<sale_carousel_limit>4</sale_carousel_limit>
+				
+			</carousels>
+			
+			<productpage>
+				            
+					   
+			        <zoom_width>412</zoom_width>
+				<use_zoom>1</use_zoom>
+				<use_carousel>1</use_carousel>
+				<hide_rightblock>0</hide_rightblock>
+				
+			</productpage>
+            <colors>
+		<skin>1</skin>
+                <button_color>C2A26F</button_color>
+                <button_hover>3D4445</button_hover>
+		<menu_bg>FFFFFF</menu_bg>
+		<firstmenu_bg>4A5456</firstmenu_bg>
+		<secondmenu_bg>3D4445</secondmenu_bg>
+		<headermenu_bg>4A5456</headermenu_bg>
+		<menu_links_color>A3A8A9</menu_links_color>
+		<footer_bg>4A5456</footer_bg>
+		<footer_link_color>A3A8A9</footer_link_color>
+		<product_border_color>EAE9E9</product_border_color>
+            </colors>
+	    <customcode>
+                <customcss>/* Add any CSS code here */</customcss>
+                <customjs>// Add any JavaScript code here</customjs>
+            </customcode>
+		</mygeneral>
+	</default>
+	<!---->
+    <adminhtml>
+	<menu>
+            <simplegreat translate="title" module="ExtraConfig">
+                <title>SimpleGreat</title>
+                <sort_order>6666</sort_order>
+                <children>
+                    <settings translate="title" module="ExtraConfig">
+                                <title>Theme Settings</title>
+                                <sort_order>10</sort_order>
+                                <action>adminhtml/system_config/edit/section/mygeneral</action>
+                            </settings>
+                </children>
+		
+            </simplegreat>
+        </menu>
+        <layout>
+            <updates>
+                <ExtraConfig>
+                    <file>options.xml</file>
+                </ExtraConfig>
+            </updates>
+        </layout>
+    </adminhtml>     
+</config>

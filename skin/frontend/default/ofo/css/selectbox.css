@@ -1,0 +1,121 @@
+.selectbox {
+	vertical-align: middle;
+	cursor: pointer;
+	
+}
+.toolbar .selectbox  {
+	background-color:#fff;
+	padding-right:10px;
+}
+.selectbox .select {
+	
+	height: 17px;
+	padding: 4px 16px 4px 8px;
+	color: #BABAB8;
+	
+	z-index:10!important;
+	
+}
+.selectbox li a {
+	text-decoration:none;
+	display:block;
+	padding: 5px 10px 6px;
+	text-align:left;
+	color: #BABAB8;
+}
+.selectbox li:hover a {
+	color:#fff;
+}
+.selectbox li a:hover {
+	color:#fff;
+	text-decoration:none!important;
+}
+.selectbox .select:hover {
+	
+}
+.selectbox .select:active {
+
+}
+.selectbox.focused .select {
+
+}
+.selectbox .select .text {
+	display: block;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background: url("../images/arrow_down_small.png") right center no-repeat;
+	padding-right:15px;
+}
+.toolbar .selectbox .select .text {
+	background: url("../images/arrow-down-small-invert.png") right center no-repeat;
+}
+.toolbar .selectbox .select {
+	color:#686161;
+}
+
+.selectbox .trigger {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 34px;
+	height: 100%;
+	border-left: none;
+
+	display:none;
+}
+.selectbox .trigger .arrow {
+	
+}
+.selectbox:hover .arrow {
+	
+}
+.toolbar .selectbox .dropdown {
+	border:none;
+	background:#fff;
+	top: 25px;
+	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.15);
+}
+.toolbar .selectbox li.selected, .toolbar .selectbox li:hover {
+	background:#EAECEE;
+	color:#000;
+}
+.toolbar .selectbox li:hover a{
+	
+	color: #000;
+}
+.toolbar .selectbox li.selected a {
+	color:#000;
+}
+.selectbox .dropdown {
+	top: 27px;
+	
+	width: 100px;
+	margin: 0;
+	padding: 0px 0;
+	background: #4A5456;
+	border-top: 1px dotted #DDDDDD;
+}
+.selectbox li {
+	
+}
+.selectbox li.selected {
+	
+	color: #FFF;
+}
+.selectbox li.selected a {
+	color:#fff;
+}
+.selectbox li:hover a{
+	
+	color: #FFF;
+}
+.selectbox li.disabled {
+	color: #CCC;
+}
+.selectbox li.disabled:hover {
+	background: none;
+}

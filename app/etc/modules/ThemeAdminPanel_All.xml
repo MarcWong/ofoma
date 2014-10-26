@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+   <modules>
+	  <ThemeAdminPanel_ExtraConfig>
+		 <active>true</active>
+		 <codePool>local</codePool>
+	  </ThemeAdminPanel_ExtraConfig>   
+   </modules>
+</config>

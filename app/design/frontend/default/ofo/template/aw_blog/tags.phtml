@@ -1,0 +1,7 @@
+<?php if (Mage::getStoreConfig(AW_Blog_Helper_Config::XML_TAGCLOUD_SIZE) && $this->getCollection()->count()): ?>
+
+            <?php foreach ($this->getCollection() as $tag): ?>
+                <a class="tag-count-<?php echo $this->getTagWeight($tag) ?>" href="<?php echo $this->getTagHref($tag) ?>"><?php echo $tag->getTag() ?></a> 
+            <?php endforeach; ?>  
+
+<?php endif; ?>

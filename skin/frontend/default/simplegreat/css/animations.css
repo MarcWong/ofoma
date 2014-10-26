@@ -1,0 +1,16 @@
+#nav > li, #nav > li > ul > li ul > li a
+{
+	transition: all 300ms ease-in-out 0s;
+	-webkit-transition: all 300ms ease-in-out 0s;
+	-moz-transition: all 300ms ease-in-out 0s;
+	-ms-transition: all 300ms ease-in-out 0s;
+	-o-transition: all 300ms ease-in-out 0s;
+}
+.quantity_box_button_down, .quantity_box_button_up,.product-view .product-img-box .main-image a.lightbox-btn, .social-share .image, .product-tabs li a, #footer #message a, .shop-about .shop-about-text a.more, .footer-social a, .bx-wrapper .bx-prev,.bx-wrapper .bx-next,.show-more-button,.prev, .next, .buttons-cart, .buttons-wish, .buttons-compare, button.button, .button, .minicart-wrapper .icon
+{
+	transition: all 200ms ease-in-out 0s;
+	-webkit-transition: all 200ms ease-in-out 0s;
+	-moz-transition: all 200ms ease-in-out 0s;
+	-ms-transition: all 200ms ease-in-out 0s;
+	-o-transition: all 200ms ease-in-out 0s;
+}
